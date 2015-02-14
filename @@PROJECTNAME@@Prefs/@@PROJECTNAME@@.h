@@ -1,0 +1,1 @@
+//static UIColot *const kTintColor = [UIColor blackColor];
