@@ -10,7 +10,7 @@
 static NSString *const bundleIdentifier = @"@@PACKAGENAME@@";
 @@CLASSPREFIX@@Listener *listener;
 
-static inline int @@CLASSPREFIX@@ListenerNubmer(NSString *listenerName) {
+static inline int @@CLASSPREFIX@@ListenerNumber(NSString *listenerName) {
     int en;
     en = [[listenerName substringFromIndex:[bundleIdentifier length]] intValue];
     return en;
@@ -31,7 +31,7 @@ static inline int @@CLASSPREFIX@@ListenerNubmer(NSString *listenerName) {
 }
 //trigger listener
 -(void)activator:(LAActivator *)activator receiveEvent:(LAEvent *)event forListenerName:(NSString *)listenerName {
-    int en = @@CLASSPREFIX@@ListenerNubmer(listenerName);
+    int en = @@CLASSPREFIX@@ListenerNumber(listenerName);
     NSLog(@"%d", en);
     //do stuff
 }
@@ -41,13 +41,13 @@ static inline int @@CLASSPREFIX@@ListenerNubmer(NSString *listenerName) {
 }
 //title
 - (NSString *)activator:(LAActivator *)activator requiresLocalizedTitleForListenerName:(NSString *)listenerName {
-    int en = @@CLASSPREFIX@@ListenerNubmer(listenerName);
+    int en = @@CLASSPREFIX@@ListenerNumber(listenerName);
     NSLog(@"%d", en);
     return [NSString stringWithFormat:@"Listener %d", en];
 }
 //description
 - (NSString *)activator:(LAActivator *)activator requiresLocalizedDescriptionForListenerName:(NSString *)listenerName {
-    int en = @@CLASSPREFIX@@ListenerNubmer(listenerName);
+    int en = @@CLASSPREFIX@@ListenerNumber(listenerName);
     return [prefs objectForKey:[NSString stringWithFormat:@"listener%d-name", en]] ?: @"Description";
 }
 //compatibility with modes
