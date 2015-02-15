@@ -72,7 +72,6 @@
 
     [prefs synchronize];
     CFNotificationCenterPostNotification(CFNotificationCenterGetDarwinNotifyCenter(), CFSTR("@@PACKAGENAME@@/updateListeners"), NULL, NULL, YES);
-    //[self reloadSpecifiers];
 }
 
 -(void)removedSpecifier:(PSSpecifier *)specifier {

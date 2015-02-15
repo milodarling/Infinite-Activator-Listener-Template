@@ -48,7 +48,7 @@ static inline int @@CLASSPREFIX@@ListenerNubmer(NSString *listenerName) {
 //description
 - (NSString *)activator:(LAActivator *)activator requiresLocalizedDescriptionForListenerName:(NSString *)listenerName {
     int en = @@CLASSPREFIX@@ListenerNubmer(listenerName);
-    return [prefs objectForKey:[bundleIdentifier stringByAppendingFormat:@"%d-name", en]] ?: @"Description";
+    return [prefs objectForKey:[NSString stringWithFormat:@"listener%d-name", en]] ?: @"Description";
 }
 //compatibility with modes
 - (NSArray *)activator:(LAActivator *)activator requiresCompatibleEventModesForListenerWithName:(NSString *)listenerName {
